@@ -29,15 +29,26 @@ lib.forEach((book) => {
   pages.className = 'pages';
   pages.innerText = book.pages + ' pages';
 
+  const container = document.createElement('div')
+  container.className = 'container'
+
   const read = document.createElement('button');
   read.className = 'read';
   read.innerText = book.read ? 'Read' : 'Not read yet';
+
+  const remove = document.createElement('div')
+  remove.className = 'remove'
+  remove.innerHTML = '&times;'
+  remove.title = 'Remove book'
+
+  container.appendChild(read)
+  container.appendChild(remove)
 
   card.appendChild(title)
   card.appendChild(hr)
   card.appendChild(author)
   card.appendChild(pages)
-  card.appendChild(read)
+  card.appendChild(container)
 
   main.appendChild(card)
 })
