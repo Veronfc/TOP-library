@@ -11,9 +11,10 @@ function book(title, author, pages, read) {
 lib.push(new book('The Hobbit', 'J.R.R. Tolkien', 310, false))
 lib.push(new book('Angels and Demons', 'Dan Brown', 768, true))
 
-lib.forEach((book) => {
+lib.forEach((book, index) => {
   const card = document.createElement('div');
   card.className = 'card';
+  card.setAttribute('data-index', index)
 
   const title = document.createElement('span');
   title.className = 'title';
@@ -56,6 +57,7 @@ lib.forEach((book) => {
 const openSide = document.getElementById('open-side')
 const closeSide = document.getElementById('close-side')
 const addBook = document.getElementById('add-book')
+const remove = document.getElementsByClassName('remove')
 
 openSide.addEventListener('click', () => {
   const sidebar = document.getElementById('sidebar')
@@ -67,5 +69,9 @@ closeSide.addEventListener('click', () => {
 })
 
 addBook.addEventListener('click', () => {
+  
+})
+
+remove.addEventListener('click', () => {
   
 })
