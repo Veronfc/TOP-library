@@ -7,9 +7,26 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div id="sidebar">
-
-  </div>
+  <form id="sidebar" method="post">
+    <div id="close-side">&times;</div>
+    <div>
+      <label for="title">TITLE</label>
+      <input id="title" name="title" type="text" required>
+    </div>
+    <div>
+      <label for="author">AUTHOR</label>
+      <input id="author" name="author" type="text" required>
+    </div>
+    <div>
+      <label for="pages">PAGES</label>
+      <input id="pages" name="pages" type="number" required>
+    </div>
+    <div>
+      <label for="read">READ</label>
+      <input id="read" name="read" type="checkbox">
+    </div>
+    <button id="add-book">ADD BOOK</button>
+  </form>
 
   <div class="lib">
     <div class="header">

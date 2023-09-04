@@ -1,6 +1,4 @@
-const sidebar = document.getElementById('siderbar')
 const main = document.querySelector('.main')
-const openSide = document.getElementById('open-side')
 const lib = []
 
 function book(title, author, pages, read) {
@@ -44,7 +42,19 @@ lib.forEach((book) => {
   main.appendChild(card)
 })
 
-openSide.addEventListener('click', () => {
-  sidebar.style.width = '300px'
+const openSide = document.getElementById('open-side')
+const closeSide = document.getElementById('close-side')
+const addBook = document.getElementById('add-book')
 
+openSide.addEventListener('click', () => {
+  const sidebar = document.getElementById('sidebar')
+  sidebar.style.display = 'grid'
+})
+
+closeSide.addEventListener('click', () => {
+  sidebar.style.display = 'none'
+})
+
+addBook.addEventListener('click', () => {
+  
 })
