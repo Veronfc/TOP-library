@@ -94,7 +94,7 @@ addBook.addEventListener('click', () => {
   if (title.checkValidity() && author.checkValidity() && pages.checkValidity()) {
     lib.push(new book(title.value, author.value, pages.value, read.checked))
 
-    sidebar.style.display = 'none'
+    sidebar.style.left = '-400px'
     document.getElementById('reset').click()
 
     display()
