@@ -78,12 +78,15 @@ addBook.addEventListener('click', () => {
   const pages = document.getElementById('pages')
   const read = document.getElementById('read')
 
-  lib.push(new book(title.value, author.value, pages.value, read.checked))
+  if (title.checkValidity() && author.checkValidity() && pages.checkValidity()) {
+    lib.push(new book(title.value, author.value, pages.value, read.checked))
 
-  sidebar.style.display = 'none'
-  document.getElementById('reset').click()
+    sidebar.style.display = 'none'
+    document.getElementById('reset').click()
 
-  display()
+    display()
+  }
+  else {alert('Invalid input!')}
 })
 
 display()
