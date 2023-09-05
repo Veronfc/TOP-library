@@ -41,8 +41,8 @@ function display() {
     read.innerText = book.read ? 'Read' : 'Not read yet';
   
     const remove = document.createElement('div')
-    remove.className = 'remove'
-    remove.innerHTML = '&times;'
+    remove.className = 'material-icons remove'
+    remove.innerHTML = 'close'
     remove.title = 'Remove book'
   
     container.appendChild(read)
@@ -58,18 +58,31 @@ function display() {
   })
 }
 
+const removes = document.querySelectorAll('.remove')
+
+removes.forEach((remove) => {
+  let i = remove.parentElement.getAttribute('data-index')
+  remove.addEventListener('click', () => {
+    input = confirm(`Are you sure you want to remove ${lib[i].title} from your library?`)
+    if (input) {
+      lib.splice(1,i)
+    }
+    display()
+  })
+})
+
+
 const openSide = document.getElementById('open-side')
 const closeSide = document.getElementById('close-side')
 const addBook = document.getElementById('add-book')
-const remove = document.getElementsByClassName('remove')
 
 openSide.addEventListener('click', () => {
   const sidebar = document.getElementById('sidebar')
-  sidebar.style.display = 'grid'
+  sidebar.style.left = '0'
 })
 
 closeSide.addEventListener('click', () => {
-  sidebar.style.display = 'none'
+  sidebar.style.left = '-400px'
 })
 
 addBook.addEventListener('click', () => {
@@ -86,7 +99,7 @@ addBook.addEventListener('click', () => {
 
     display()
   }
-  else {alert('Invalid input!')}
+  else {alert('Input Error\nEnsure you have entered all details correctly')}
 })
 
 display()
