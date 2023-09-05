@@ -27,12 +27,12 @@
   left: 0;
   z-index: 1;
   width: 300px;
-  padding: 2em;
-  display: none;
+  padding: 1.5rem 2rem;
+  display: grid;
   background-color: #E2D1F9;
   box-shadow: 0 0 40px black;
 
-  grid-template-rows: 15px repeat(3, 80px) 50px 50px 1fr;
+  grid-template-rows: 30px repeat(3, 70px) 40px 50px 1fr;
   align-items: start;
 }
 
@@ -42,6 +42,10 @@
   align-self: center;
   justify-self: end;
   cursor: pointer;
+}
+
+#sidebar #close-side:hover {
+  color: red;
 }
 
 #sidebar > div{
@@ -62,7 +66,7 @@
 
 #sidebar label {
   font-size: 1rem;
-  padding: 0 20px 0 5px;
+  padding: 0 15px 2px 5px;
 }
 
 #sidebar input {
@@ -110,6 +114,10 @@
   align-content: center;
   padding: 0 0 0 20px;
   cursor: pointer;
+}
+
+#open-side:hover {
+  color: lightseagreen;
 }
 
 .main {
