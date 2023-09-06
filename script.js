@@ -17,6 +17,7 @@ function display() {
   lib.forEach((book, index) => {
     const card = document.createElement('div');
     card.className = 'card';
+    card.setAttribute('data-index', index)
   
     const title = document.createElement('span');
     title.className = 'title';
@@ -37,14 +38,14 @@ function display() {
   
     const read = document.createElement('button');
     read.className = 'read';
-    read.setAttribute('data-index', index)
     read.innerText = book.read ? 'Read' : 'Not read yet';
+    read.setAttribute('onclick', 'read(this)')
   
     const remove = document.createElement('button')
     remove.className = 'material-icons remove'
-    remove.setAttribute('data-index', index)
     remove.innerHTML = 'close'
     remove.title = 'Remove book'
+    remove.setAttribute('onclick', 'remove(this)')
   
     container.appendChild(read)
     container.appendChild(remove)
@@ -59,20 +60,22 @@ function display() {
   })
 }
 
-/*
-const removes = document.querySelectorAll('.remove')
+function read(node) {
+  let i = node.parentNode.parentNode.getAttribute('data-index')
+  
+  lib[i].read = lib[i].read ? false : true
+  node.innerText = lib[i].read ? 'Read' : 'Not read yet'
+}
 
-removes.forEach((bremove) => {
-  let i = remove.getAttribute('data-index')
-  remove.addEventListener('click', () => {
-    alert(i)
-    input = confirm(`Are you sure you want to remove ${lib[i].title} from your library?`)
-    if (input) {
-      lib.splice(1,i)
-    }
+function remove(node) {
+  let i = node.parentNode.parentNode.getAttribute('data-index')
+  let response = confirm(`Are you sure you want to remove '${lib[i].title}' from your library?`)
+  
+  if (response) {
+    lib.splice(i, 1)
     display()
-  })
-})*/
+  }
+}
 
 const openSide = document.getElementById('open-side')
 const closeSide = document.getElementById('close-side')
