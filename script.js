@@ -59,6 +59,7 @@ function display() {
   })
 }
 
+/*
 const removes = document.querySelectorAll('.remove')
 
 removes.forEach((bremove) => {
@@ -71,7 +72,7 @@ removes.forEach((bremove) => {
     }
     display()
   })
-})
+})*/
 
 const openSide = document.getElementById('open-side')
 const closeSide = document.getElementById('close-side')
