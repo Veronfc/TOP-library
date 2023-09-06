@@ -186,17 +186,16 @@ hr {
   overflow: hidden;
 }
 
-.read {
-  width: 95%;
+.read, .remove {
+  height: 2.5rem;
+  width: 100%;
   background-color: #526D82;
   color: white;
   border: 0;
   border-radius: 10px;
-  padding: 0.2em 0;
   font-size: 1.5rem;
   cursor: pointer;
   transition: 0.5s;
-  justify-self: end;
 }
 
 .read:hover {
@@ -204,23 +203,18 @@ hr {
   color: black;
 }
 
-.remove {
-  font-size: 2rem;
-  display: flex;
-  align-self: center;
-  justify-self: center;
-  cursor: pointer;
-}
-
 .remove:hover {
+  background-color: #64CCC5;
   color: red;
 }
 
 .container {
-  width: 100%;
+  width: 92%;
   display: grid;
   grid-template-columns: 4fr 1fr;
+  gap: 15px;
   align-items: center;
+  justify-items: center;
 }
 
 button {

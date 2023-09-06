@@ -17,7 +17,6 @@ function display() {
   lib.forEach((book, index) => {
     const card = document.createElement('div');
     card.className = 'card';
-    card.setAttribute('data-index', index)
   
     const title = document.createElement('span');
     title.className = 'title';
@@ -38,10 +37,12 @@ function display() {
   
     const read = document.createElement('button');
     read.className = 'read';
+    read.setAttribute('data-index', index)
     read.innerText = book.read ? 'Read' : 'Not read yet';
   
-    const remove = document.createElement('div')
+    const remove = document.createElement('button')
     remove.className = 'material-icons remove'
+    remove.setAttribute('data-index', index)
     remove.innerHTML = 'close'
     remove.title = 'Remove book'
   
@@ -60,9 +61,10 @@ function display() {
 
 const removes = document.querySelectorAll('.remove')
 
-removes.forEach((remove) => {
-  let i = remove.parentElement.getAttribute('data-index')
+removes.forEach((bremove) => {
+  let i = remove.getAttribute('data-index')
   remove.addEventListener('click', () => {
+    alert(i)
     input = confirm(`Are you sure you want to remove ${lib[i].title} from your library?`)
     if (input) {
       lib.splice(1,i)
@@ -70,7 +72,6 @@ removes.forEach((remove) => {
     display()
   })
 })
-
 
 const openSide = document.getElementById('open-side')
 const closeSide = document.getElementById('close-side')
