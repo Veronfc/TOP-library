@@ -9,7 +9,6 @@ function book(title, author, pages, read) {
 }
 
 lib.push(new book('The Hobbit', 'J.R.R. Tolkien', 310, false))
-lib.push(new book('Angels and Demons', 'Dan Brown', 768, true))
 
 function display() {
   main.innerHTML = ''
