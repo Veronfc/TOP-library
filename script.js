@@ -1,12 +1,31 @@
 const main = document.querySelector('.main')
 const lib = []
 
-function book(title, author, pages, read) {
+class book {
+  constructor(title, author, pages, read) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+  }
+
+  get title() {return title}
+  get author() {return author}
+  get pages() {return pages}
+  get read() {return read}
+
+  set title(value) {this.title = value}
+  set author(x) {this.author = x}
+  set pages(x) {this.pages = x}
+  set read(x) {this.read = x}
+}
+
+/*function book(title, author, pages, read) {
   this.title = title
   this.author = author
   this.pages = pages
   this.read = read
-}
+}*/
 
 lib.push(new book('The Hobbit', 'J.R.R. Tolkien', 310, false))
 lib.push(new book('Angels and Demons', 'Dan Brown', 768, true))
